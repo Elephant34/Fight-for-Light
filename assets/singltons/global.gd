@@ -27,6 +27,6 @@ func _notification(what):
         if errors > 0:
             print("Error(s) Encountered: ", errors)
         else:
-            print("What no errors?? What went wrong with the error tracker??")
+            print("What no errors?? I think the error count has a bug")
 
         get_tree().quit() # default behavior

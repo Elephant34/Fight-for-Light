@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-export var speed = 200
+export var speed = 2000
 
 var setup_complete = false
 # Determins the character number and thus which controls to use
@@ -27,10 +27,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("player%s_right"%player_number):
 		velocity.x += 1
 	
-	var collisions = move_and_collide(velocity.normalized() * speed * delta)
+	var _collisions = move_and_slide(velocity.normalized() * speed * delta)
 
-	if collisions:
-		print("Player%s: owch"%player_number)
 
 func setup(player_no:int) -> void:
 	player_number = player_no
